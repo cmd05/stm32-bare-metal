@@ -1,0 +1,19 @@
+# Eclipse
+*.metadata
+*.settings
+[Rr]elease
+[Dd]ebug
+*.launch
+docs/
+chip_headers/
+
+*.cproject
+*.ld
+*.project
+*.mxproject
+*.ioc
+
+# ignore startup files
+*.s 
+# ignore project drivers
+Drivers/
