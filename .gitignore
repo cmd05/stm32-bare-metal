@@ -9,7 +9,7 @@ chip_headers/
 
 *.cproject
 *.ld
-*.project
+# *.project
 *.mxproject
 *.ioc
 
