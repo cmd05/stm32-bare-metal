@@ -17,3 +17,5 @@ chip_headers/
 *.s 
 # ignore project drivers
 Drivers/
+
+/stm32-progress.png
