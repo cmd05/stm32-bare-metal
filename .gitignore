@@ -23,3 +23,6 @@ Drivers/
 
 # ignore project images (for now)
 /images
+
+# ignore notes
+/notes
