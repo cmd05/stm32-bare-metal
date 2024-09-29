@@ -19,7 +19,8 @@ void systickDelayMs(int delay) { // accept `delay` in ms
 	// configure systick
 	// reload with number of clocks per millisecond (can be a 24 bit value)
 	// setup for 1 ms delay
-	SysTick->LOAD = SYSTICK_LOAD_VAL; // STRVR register
+	// we use `SYSTICK_LOAD_VAL - 1` as we count down to zero
+	SysTick->LOAD = SYSTICK_LOAD_VAL - 1; // STRVR register
 
 	// clear systick current value register
 	SysTick->VAL = 0; // STCVR register

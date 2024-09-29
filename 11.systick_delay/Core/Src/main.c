@@ -26,7 +26,6 @@ int main() {
 
 	while(1) {
 		printf("A second passed\n\r"); // sent from board to computer
-//		printf("SysTick %u\n\r", SysTick->VAL); // sent from board to computer
 		GPIOA->ODR ^= LED_PIN;
 		systickDelayMs(1000); // 1 second
 	}
