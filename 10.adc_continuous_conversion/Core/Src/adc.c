@@ -5,7 +5,7 @@
 #define GPIOAEN 		(1U << 0)
 #define ADC1EN 			(1U << 8)
 
-#define ADC_CH1			(16U << 0)
+#define ADC_CH1			(1U << 0)
 #define ADC_SEQ_LEN_1	0x00
 
 #define CR2_AD_ON		(1U << 0)
