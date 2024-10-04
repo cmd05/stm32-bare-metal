@@ -23,7 +23,3 @@ int main() {
 		printf("Sensor value: %lu\n\r", sensor_value); // sent from board to computer
 	}
 }
-
-
-
-

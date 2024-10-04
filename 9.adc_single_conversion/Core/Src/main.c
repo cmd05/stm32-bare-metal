@@ -19,11 +19,8 @@ int main() {
 	start_conversion(); // single conversion
 
 	while(1) {
+//		start_conversion(); // single conversion
 		sensor_value = adc_read();
 		printf("Sensor value: %lu\n\r", sensor_value);
 	}
 }
-
-
-
-
