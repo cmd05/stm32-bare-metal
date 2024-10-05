@@ -26,3 +26,6 @@ Drivers/
 
 # ignore notes
 /stm32-notes
+
+# ignore books
+/*.pdf
