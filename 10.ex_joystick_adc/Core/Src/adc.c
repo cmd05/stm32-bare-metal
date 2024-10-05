@@ -115,7 +115,7 @@ uint32_t adc_read(void) {
 	// for multi channel conversion
 	// 1. use dma
 	// 2. use eocie bit and cr1->scan bit for interrupts
-	// 3. use EOCS=0 and discontinuous mode (https://community.st.com/t5/stm32-mcus-products/adc-s-eoc-event/td-p/519680)
+	// 3. use EOCS=1 and discontinuous mode (https://community.st.com/t5/stm32-mcus-products/adc-s-eoc-event/td-p/519680)
 
 	// read converted result
 	return ADC1->DR;
