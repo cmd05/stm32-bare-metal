@@ -18,9 +18,6 @@ chip_headers/
 # ignore project drivers
 Drivers/
 
-# ignore progress file
-/stm32-progress.png
-
 # ignore project images (for now)
 /images
 
