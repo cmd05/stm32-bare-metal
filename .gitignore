@@ -26,3 +26,14 @@ Drivers/
 
 # ignore books
 /*.pdf
+
+**/build/
+.vscode
+**/CMakeFiles
+**/cmake
+CMakePresets.json
+compile_commands.json
+
+*.ninja
+*.cmake
+CMakeCache.txt
