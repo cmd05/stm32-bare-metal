@@ -27,6 +27,7 @@ Drivers/
 # ignore books
 /*.pdf
 
+# build using vscode
 **/build/
 .vscode
 **/CMakeFiles
