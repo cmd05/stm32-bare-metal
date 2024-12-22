@@ -29,7 +29,7 @@ Drivers/
 
 # build using vscode
 **/build/
-.vscode
+**/.vscode/
 **/CMakeFiles
 **/cmake
 CMakePresets.json
