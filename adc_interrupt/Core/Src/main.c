@@ -34,7 +34,7 @@ void ADC_IRQHandler(void) {
     // 0: Conversion not complete (EOCS=0), or sequence of conversions not complete (EOCS=1)
     // 1: Conversion complete (EOCS=0), or sequence of conversions complete (EOCS=1)
     if((ADC1->SR & ADC_SR_EOC) != 0) { // EOC interrupt
-        // ADC1->SR &= ~ADC_SR_EOC;
+        ADC1->SR &= ~ADC_SR_EOC;
 
         adc_callback();
     }
