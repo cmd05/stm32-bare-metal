@@ -38,6 +38,12 @@ static void exti_callback(void) {
 	GPIOA->ODR ^= LED_PIN;
 }
 
+// EXTI_PR:
+// Bits 22:0 PRx: Pending bit
+// 0: No trigger request occurred
+// 1: selected trigger request occurred
+	// This bit is set when the selected edge event arrives on the external interrupt line.
+	// This bit is cleared by programming it to '1'
 void EXTI15_10_IRQHandler(void) {
 	if((EXTI->PR & EXTI_LINE13) != 0) {
 		// Clear PR Flag
