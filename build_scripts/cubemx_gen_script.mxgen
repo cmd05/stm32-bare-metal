@@ -1,0 +1,8 @@
+loadboard NUCLEO-F401RE allmodes
+config load default_gen.ioc
+project name __PROJECT_NAME__
+SetCopyLibrary "copy all"
+SetStructure Advanced
+project toolchain CMake
+project generate
+exit

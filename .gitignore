@@ -40,3 +40,6 @@ compile_commands.json
 CMakeCache.txt
 log*.txt
 *.log
+
+/cubemx_gen_script.mxgen
+/generate_project.sh
