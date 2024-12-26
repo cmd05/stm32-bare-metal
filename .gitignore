@@ -38,3 +38,5 @@ compile_commands.json
 *.ninja
 *.cmake
 CMakeCache.txt
+log*.txt
+*.log
