@@ -7,7 +7,7 @@
 
 #include "stm32f4xx.h"
 
-#define SYSTICK_LOAD_VAL		16000		// 16Mhz => 16000 cycles per ms i.e 1ms delay
+#define SYSTICK_LOAD_VAL		16000		// (1ms) 16Mhz => 16000 cycles per ms i.e 1ms delay
 #define CTRL_ENABLE				(1U << 0)
 #define CTRL_CLKSRC				(1U << 2) 	// internal clock source
 #define CTRL_COUNTFLAG			(1U << 16) 	// position of COUNTFLAG
