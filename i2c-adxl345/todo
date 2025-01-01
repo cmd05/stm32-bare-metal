@@ -1,0 +1,5 @@
+fix so that AF is not 1 and ADDR is actually set in correct time
+    whenever we transmit maddr / saddr by `I2C1->DR =` ADDR goes from 1 to 0
+fix RXNE not being set
+
+just test arduino as slave and stm32 master easy communication
