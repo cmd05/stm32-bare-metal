@@ -231,6 +231,10 @@ void I2C1_burstRead(char saddr, char maddr, int n, char* data) {
     I2C1->CR1 |= I2C_CR1_ACK;
 
     // read in burst mode
+    // In a burst transfer, the address for write or read transfer is just an incremental value of previous address. 
+    // Hence in a 4-beat incremental burst transfer (write or read), if the starting address is 'A', then the consecutive addresses will be 'A+m', 'A+2*m', 'A+3*m'.
+    // Hence, in burst read/write, `maddr` will be automatically incremented by the slave by 1 byte (i.e to start of next register)
+
     // After each byte the interface generates in sequence:
     // 1. An acknowledge pulse if the ACK bit is set
     // 2. The RxNE bit is set 
