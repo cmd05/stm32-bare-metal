@@ -111,14 +111,10 @@ void I2C1_byteRead(char saddr, char maddr, char *data) {
     // i.e I2C_DR: LSB is R/W and bits 1-7 contain slave address
     I2C1->DR = (saddr << 1) | 0;
 
-    // while(!(I2C1->SR1 & I2C_SR1_ADDR))
-    //     ;
-    // // clear ADDR by read
-    // tmp = I2C1->SR2;
-    
-    // wait until addr flag is set and clear it
-    while (!(I2C1->SR1) | !(I2C1->SR2))
+    while(!(I2C1->SR1 & I2C_SR1_ADDR))
         ;
+    // clear ADDR by read
+    tmp = I2C1->SR2;
 
     // transmit memory address inside slave
     I2C1->DR = maddr;
@@ -144,15 +140,12 @@ void I2C1_byteRead(char saddr, char maddr, char *data) {
     // (R/W bit is set)
     I2C1->DR = (saddr << 1) | 1;
 
-    // // wait until addr flag is set
-    // while(!(I2C1->SR1 & I2C_SR1_ADDR))
-    //     ;
-    // // clear ADDR by read
-    // tmp = I2C1->SR2;
-    // wait until addr flag is set and clear it
-    while ((I2C1->SR1 & I2C_SR1_ADDR) == 0)
+    // wait until addr flag is set
+    while(!(I2C1->SR1 & I2C_SR1_ADDR))
         ;
-    
+    // clear ADDR by read
+    tmp = I2C1->SR2;
+
     // disable acknowledge
     I2C1->CR1 &= ~I2C_CR1_ACK;
 
@@ -188,19 +181,16 @@ void I2C1_burstRead(char saddr, char maddr, int n, char* data) {
     // transmit slave address + write
     I2C1->DR = saddr << 1;
 
-    // // wait until ADDR flag is set
-    // while(!(I2C1->SR1 & I2C_SR1_ADDR))
-    //     ;
-    // // clear ADDR flag
-    // tmp = I2C1->SR2;
-    // wait until addr flag is set and clear it
-    while (!(I2C1->SR1) | !(I2C1->SR2))
+    // wait until ADDR flag is set
+    while(!(I2C1->SR1 & I2C_SR1_ADDR))
         ;
+    // clear ADDR flag
+    tmp = I2C1->SR2;
 
     // wait until transmitter is empty
     while(!(I2C1->SR1 & I2C_SR1_TXE))
         ;
-    
+
     // send memory address
     I2C1->DR = maddr;
 
@@ -219,13 +209,10 @@ void I2C1_burstRead(char saddr, char maddr, int n, char* data) {
     I2C1->DR = (saddr << 1) | 1;
 
     // wait until ADDR flag is set
-    // while(!(I2C1->SR1 & I2C_SR1_ADDR))
-    //     ;
-    // // clear ADDR flag
-    // tmp = I2C1->SR2;
-    // wait until addr flag is set and clear it
-    while (!(I2C1->SR1) | !(I2C1->SR2))
+    while(!(I2C1->SR1 & I2C_SR1_ADDR))
         ;
+    // clear ADDR flag
+    tmp = I2C1->SR2;
 
     // enable acknowledge
     I2C1->CR1 |= I2C_CR1_ACK;
@@ -249,7 +236,7 @@ void I2C1_burstRead(char saddr, char maddr, int n, char* data) {
             // wait until RXNE flag is set
             while(!(I2C1->SR1 & I2C_SR1_RXNE))
                 ;
-            
+
             // read data from DR
             *data++ = I2C1->DR;
 
@@ -285,13 +272,10 @@ void I2C1_burstWrite(char saddr, char maddr, int n, char* data) {
     I2C1->DR = saddr << 1;
 
     // wait until ADDR flag is set
-    // while(!(I2C1->SR1 & I2C_SR1_ADDR))
-    //     ;
-    // // clear ADDR flag
-    // tmp = I2C1->SR2;
-    // wait until addr flag is set and clear it
-    while (!(I2C1->SR1) | !(I2C1->SR2))
+    while(!(I2C1->SR1 & I2C_SR1_ADDR))
         ;
+    // clear ADDR flag
+    tmp = I2C1->SR2;
 
     // wait until data register is empty
     while(!(I2C1->SR1 & I2C_SR1_TXE))
