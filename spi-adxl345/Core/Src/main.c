@@ -5,7 +5,7 @@
 
 double x, y, z;
 double xg, yg, zg;
-const int FOUR_G_SCALE = 0.0078;
+const int FOUR_G_SCALE = 0.0078; // 1/128 for 4g scale
 
 uint8_t g_data_rec[6];
 
