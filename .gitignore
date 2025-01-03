@@ -43,3 +43,7 @@ log*.txt
 
 /cubemx_gen_script.mxgen
 /generate_project.sh
+
+# ignore debug projects
+/i2c-arduino-slave
+/tut-adxl-i2c
