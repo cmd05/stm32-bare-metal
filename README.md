@@ -1,3 +1,13 @@
-# STM32 Dev Learning
+# STM32 Bare Metal
 
-![](stm32-progress.png)
+Notes on ARM Design and ARM Programmer's Model are [here](https://github.com/cmd05/arm-design-notes).
+
+## Projects
+
+LCD Control
+
+![](_assets/lcd.jpg)
+
+ADXL345 Interface (I2C and SPI)
+
+![](_assets/adxl.png)
